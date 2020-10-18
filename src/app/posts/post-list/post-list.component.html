@@ -1,0 +1,13 @@
+<mat-accordion multi="true" *ngIf="post.length> 0">
+  <mat-expansion-panel *ngFor="let post of post">
+    <mat-expansion-panel-header>
+      <h3>{{post.title}}</h3>
+    </mat-expansion-panel-header>
+    <p>{{post.content}}</p>
+    <mat-action-row>
+      <button mat-button color="primary" >EDIT</button>
+      <button mat-button color="warn" (click)="onDelete(post.id)" >DELETE</button>
+    </mat-action-row>
+  </mat-expansion-panel>
+</mat-accordion>
+<p class="info-text mat-body-1" *ngIf="post.length<=0">No popst's yet</p>
